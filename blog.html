@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>호치민 풀빌라 예약안내 | 신짜오호치민</title>
+  <meta name="description" content="호치민 풀빌라 예약안내. 임시 거주자 등록 필수, 불법 임대업자 피해 주의. 신짜오호치민 카페 예약 문의(카카오톡 채널)로 안전하게 예약하세요." />
+  <meta name="keywords" content="호치민 풀빌라, 호치민 4룸 풀빌라, 호치민 풀빌라 예약, 신짜오호치민, 호치민 로컬정보, 숙소, 가이드, 가라오케, 로컬가라오케" />
+
+  <!-- Canonical + OG (đổi đúng trang blog) -->
+  <link rel="canonical" href="https://xinchaohochiminh.vercel.app/blog.html" />
+  <meta property="og:title" content="호치민 풀빌라 예약안내 | 신짜오호치민" />
+  <meta property="og:description" content="임시 거주자 등록 필수, 불법 임대업자 피해 주의. 신짜오호치민 카페 예약 문의(카카오톡 채널)로 안전하게 예약하세요." />
+  <meta property="og:url" content="https://xinchaohochiminh.vercel.app/blog.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/mystyle.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="picter/favicon.jpg" />
+</head>
+
+<body>
+  <!-- Menu -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">신짜오 호치민</div>
+
+      <ul id="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="golf.html">Golf</a></li>
+        <li><a href="apartment.html">Apartment</a></li>
+        <li><a href="villa.html">Villa</a></li>
+        <li><a href="car-rental.html">Car Rental</a></li>
+        <li><a href="home.html">Other Services</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle" type="button">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-container">
+      <div class="blog-grid" id="blogGrid">
+        <!-- BLOG CARD -->
+        <article class="blog-card">
+          <img src="picter/blog/18_12_2/1 (4).jpg" alt="호치민 8룸 꿈 풀빌라 예약안내" />
+          <div class="blog-content">
+            <div class="blog-date">2025-12-10</div>
+            <h3 class="blog-title">호치민 8룸 꿈 풀빌라 예약안내</h3>
+            <p class="blog-desc">
+              호치민에서 안전하게 풀빌라를 예약하기 전 꼭 확인해야 할 필수 안내사항을 정리했습니다.
+            </p>
+            <a href="blog2.html" class="blog-btn">자세히 보기</a>
+          </div>
+        </article>
+
+
+        <article class="blog-card">
+          <img src="picter/VILLA/villa_15/15 (1).jpg" alt="호치민 4룸 망고 풀빌라" />
+          <div class="blog-content">
+            <div class="blog-date">2025-12-11</div>
+            <h3 class="blog-title">호치민 4룸 망고 풀빌라 예약안내</h3>
+            <p class="blog-desc">
+              호치민에서 안전하게 풀빌라를 예약하기 전 꼭 확인해야 할 필수 안내사항을 정리했습니다.
+            </p>
+            <a href="blog1.html" class="blog-btn">자세히 보기</a>
+          </div>
+        </article>
+
+
+
+
+
+
+
+
+        <!-- copy thêm nhiều card -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="blog-pagination" id="pagination"></div>
+    </section>
+
+    <!-- Liên hệ -->
+    <section class="contact">
+      <div class="contact-container">
+        <a href="http://pf.kakao.com/_FXwxkG/chat" target="_blank" class="contact-link" rel="noopener">
+          <img src="picter/kakaotalk.png" alt="KakaoTalk" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 XINCHAOHOCHIMINH. All rights reserved.</p>
+  </footer>
+
+  <!-- Menu toggle -->
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    if (toggleBtn && menu) {
+      toggleBtn.addEventListener("click", () => {
+        menu.classList.toggle("active");
+      });
+
+      menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) menu.classList.remove("active");
+        });
+      });
+    }
+  </script>
+
+  <!-- Pagination -->
+  <script>
+    const cards = document.querySelectorAll(".blog-card");
+    const perPage = 10;
+    const totalPages = Math.ceil(cards.length / perPage);
+    const pagination = document.getElementById("pagination");
+
+    function showPage(page) {
+      cards.forEach((card, index) => {
+        card.style.display =
+          index >= (page - 1) * perPage && index < page * perPage ? "flex" : "none";
+      });
+
+      pagination.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+      const activeBtn = document.getElementById(`page-${page}`);
+      if (activeBtn) activeBtn.classList.add("active");
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = i;
+      btn.id = `page-${i}`;
+      btn.addEventListener("click", () => showPage(i));
+      pagination.appendChild(btn);
+    }
+
+    if (totalPages > 0) showPage(1);
+  </script>
+</body>
+</html>
