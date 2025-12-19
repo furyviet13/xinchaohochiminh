@@ -105,7 +105,22 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://xinchaohochiminh.vercel.app/car-rental.html</loc>
+    <loc>https://xinchaohochiminh.vercel.app/blog.html</loc>
+  </url>
+  <url>
+    <loc>https://xinchaohochiminh.vercel.app/blog/ho-chi-minh-8-room-pool-villa-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://xinchaohochiminh.vercel.app/blog/ho-chi-minh-4-room-pool-villa-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://xinchaohochiminh.vercel.app/blog/ho-chi-minh-y4-6-room-pool-villa.html</loc>
+  </url>
+  <url>
+    <loc>https://xinchaohochiminh.vercel.app/blog/ho-chi-minh-the-sun-avenue-q2-apartment-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://xinchaohochiminh.vercel.app/blog/ho-chi-minh-lexington-apartment-guide.html</loc>
   </url>
 
  

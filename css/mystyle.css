@@ -1563,3 +1563,21 @@ height: 300px;
   border-left: 4px solid #2d7ac8;
   font-weight: 500;
 }
+
+
+.view-all-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #1e40af;
+}
